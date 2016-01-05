@@ -10,6 +10,7 @@ public class BotController
 	private int xPosition, yPosition;
 	private long waitTime;
 	
+	
 	private EV3Bot sillyBot;
 	
 	public BotController()
@@ -17,7 +18,7 @@ public class BotController
 		this.xPosition = 50;
 		this.yPosition = 100;
 		this.waitTime = 4000;
-		this.message = "Something about a robot";
+		this.message = "Hi im ZACH BRO";
 		
 		sillyBot = new EV3Bot();
 	}
