@@ -65,16 +65,26 @@ public class EV3Bot
 		//Long method
 			botPilot.stop();
 			botPilot.travel(3510.00);
-			botPilot.rotateRight();
 			botPilot.stop();
-			botPilot.travel(5940.00);
 			botPilot.rotateLeft();
+			botPilot.travel(5940.00);
+			botPilot.stop();
+			botPilot.rotateRight();
+			botPilot.travel(3780.00);
+			botPilot.stop();
+			botPilot.rotateleft();
+			botPilot.travel(540.00);
+			botPilot.stop();
+			botPilot.rotateRight();
+			botPilot.travel(270.00);
+			botPilot.stop();
 		}
 		else
 		{
 			
 		//Short method
-			botPilot.travel(254.00);
+			//botPilot.travel(254.00);
+			botPilot.stop();
 		}
 			
 			
