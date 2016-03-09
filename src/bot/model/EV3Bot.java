@@ -35,7 +35,7 @@ public class EV3Bot
 		this.waitTime = 4000;
 		
 		distanceSensor = new EV3UltrasonicSensor(LocalEV3.get().getPort("S1"));
-		backTouch = new EV3TouchSensor(LocalEV3.get().getPort("S2"));
+		//backTouch = new EV3TouchSensor(LocalEV3.get().getPort("S2"));
 		
 		setupPilot();
 		displayMessage();
@@ -58,7 +58,11 @@ public class EV3Bot
 		ultrasonicSamples = new float [distanceSensor.sampleSize()];
 		distanceSensor.fetchSample(ultrasonicSamples, 0);
 		
+		
 		for(ultrasonicSamples[0] = 0; (ultrasonicSamples[0]) > (ultrasonicSamples[0] + 1); ultrasonicSamples[0]++);
+		
+		
+		botPilot.travel(810.00);
 		if(ultrasonicSamples[0] > 810 / 2)
 		{
 			
@@ -67,30 +71,42 @@ public class EV3Bot
 			botPilot.travel(3510.00);
 			botPilot.stop();
 			botPilot.rotateLeft();
-			botPilot.travel(5940.00);
-			botPilot.stop();
-			botPilot.rotateRight();
-			botPilot.travel(3780.00);
-			botPilot.stop();
-			botPilot.rotateleft();
-			botPilot.travel(540.00);
-			botPilot.stop();
-			botPilot.rotateRight();
-			botPilot.travel(270.00);
-			botPilot.stop();
 		}
-		else
-		{
+			
+			else if(ultrasonicSamples[0] > 5940 / 2)
+			{
+				botPilot.travel(5940.00);
+				botPilot.stop();
+				botPilot.rotateRight();	
+				botPilot.travel(3780.00);
+				botPilot.stop();
+				botPilot.rotateLeft();
+			}
+			
+			else if (ultrasonicSamples[0] > 540 / 2)
+			{
+				botPilot.travel(540.00);
+				botPilot.stop();
+				botPilot.rotateRight();
+				botPilot.travel(270.00);
+				botPilot.stop();
+				
+			}	
+			
+			
+		}
+		//else 
+		//{
 			
 		//Short method
 			//botPilot.travel(254.00);
-			botPilot.stop();
-		}
+			//botPilot.stop();
+		//}
 			
 			
-		displayMessage("driveRoom");
+		//displayMessage("driveRoom");
 		
-	}
+	//}
 	
 	private void displayMessage()
 	{
