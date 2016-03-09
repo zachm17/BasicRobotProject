@@ -70,24 +70,24 @@ public class EV3Bot
 			botPilot.stop();
 			botPilot.travel(3510.00);
 			botPilot.stop();
-			botPilot.rotateLeft();
+			botPilot.rotate(-90);
 		}
 			
 			else if(ultrasonicSamples[0] > 5940 / 2)
 			{
 				botPilot.travel(5940.00);
 				botPilot.stop();
-				botPilot.rotateRight();	
+				botPilot.rotate(90);	
 				botPilot.travel(3780.00);
 				botPilot.stop();
-				botPilot.rotateLeft();
+				botPilot.rotate(-90);
 			}
 			
 			else if (ultrasonicSamples[0] > 540 / 2)
 			{
 				botPilot.travel(540.00);
 				botPilot.stop();
-				botPilot.rotateRight();
+				botPilot.rotate(90);
 				botPilot.travel(270.00);
 				botPilot.stop();
 				
