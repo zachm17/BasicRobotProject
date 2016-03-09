@@ -63,6 +63,9 @@ public class EV3Bot
 		
 		
 		botPilot.travel(810.00);
+		
+		distanceSensor = new EV3UltrasonicSensor(LocalEV3.get().getPort("S1"));
+		
 		if(ultrasonicSamples[0] > 810 / 2)
 		{
 			
