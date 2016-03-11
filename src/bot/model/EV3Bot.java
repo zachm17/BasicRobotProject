@@ -70,7 +70,9 @@ public class EV3Bot
 		{
 			
 		//Long method
+			botPilot.travel(810.00);
 			botPilot.stop();
+			botPilot.rotate(90);
 			botPilot.travel(3510.00);
 			botPilot.stop();
 			botPilot.rotate(-90);
